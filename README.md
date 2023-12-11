@@ -9,7 +9,7 @@ This is a data Engineering Test Backend
 - Uses [Pessly Goose](https://pressly.github.io/goose/) for handling database migrations and versioning.
 - Uses [Celery](https://docs.celeryq.dev/en/stable/getting-started/introduction.html) for Task scheduling and Management
 - Uses [Redis](https://redis.io/) as Task and Result Backend for Celery
-- Uses [PyTest](https://docs.pytest.org/en/7.1.x/) as the framework.
+- Uses [PyTest](https://docs.pytest.org/en/7.1.x/) as the testing framework.
 - Uses [Docker and Docker Compose](https://docs.docker.com/compose/) for spinning up PostgreSQL, Redis, Redis Commander and PG Admin4 development instances.
 - Uses [Makefile](https://makefiletutorial.com/) to execute commands.
 
