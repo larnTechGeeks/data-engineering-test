@@ -7,7 +7,6 @@ from app.utils.currency_converter import CurrencyClient
 @shared_task(bind=True)
 def update_exchange_rates(self, red_beat_name):
     try:
-        print("Reading data")
         entry = RedBeatSchedulerEntry.from_key("redbeat:" + red_beat_name, app=celery_app)
         converter = CurrencyClient(
             base_url=BASE_URL,
@@ -25,3 +24,13 @@ def update_exchange_rates(self, red_beat_name):
         entry.delete()
 
     return "DONE"
+
+def update_exchange_rates_scheduler():
+   converter = CurrencyClient(
+            base_url=BASE_URL,
+            api_id=API_ID,
+            api_key=API_KEY,
+            to_currencies= ['NGN', 'GHS', 'KES', 'UGX', 'MAD', 'XOF', 'EGP']
+    )
+   res = converter.convert_from()
+   print("Result of conversion: ", res)

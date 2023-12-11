@@ -16,7 +16,15 @@ This is a data Engineering Test Backend
 # KEY Notes.
 The commands are written in a `Makefile` to make it easier to execute commands. The commands work for Unix Based systems `(Linux and Mac)` to work on  windows machine some modifications maybe required.
 
+There are two Scheduling mechanisms Deployed.
+- Once without persistence UsinG `APSSchedular` library. Much simpler to setup but if somethig breaks no tasks are not recoverable.
+- An improvement and one with persistence `Celery` with `Celery beat` with uses `Redis` as the broker and result backend.
+
+Currenlty `APSSchedular` approach is commented out, but if you want to use it just comment out celery section and uncomment it, then restart the server.
+
 To get started rename the `.env.sample` to `.env` and fill the required `API_ID` and `API_KEY`
+
+Sometimes the `crontab` scheduler may hand on the terminal, so stopping the `celery beat` terminal and restarting it again may help.
 
 To trigger the currency exchange manually after running the server navigate to `http://localhost:5080/v1/rates/update` and the currency api call will be triggered and the currencies populated to the database.
 
