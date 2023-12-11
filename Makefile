@@ -37,7 +37,7 @@ celery:
 	celery -A run.celery worker --loglevel=info
 
 beat:
-	celery -A run.celery beat -S redbeat.RedBeatScheduler --max-interval 30 --loglevel=info
+	celery -A run.celery beat -S redbeat.RedBeatScheduler --loglevel=info
 
 server:
 	FLASK_APP=run.py flask run -h 0.0.0.0 -p 5080 --reload

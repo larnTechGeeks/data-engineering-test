@@ -13,6 +13,11 @@ This is a data Engineering Test Backend
 - Uses [Docker and Docker Compose](https://docs.docker.com/compose/) for spinning up PostgreSQL, Redis, Redis Commander and PG Admin4 development instances.
 - Uses [Makefile](https://makefiletutorial.com/) to execute commands.
 
+# KEY Notes.
+The commands are written in a `Makefile` to make it easier to execute commands. The commands work for Unix Based systems `(Linux and Mac)` to work on  windows machine some modifications maybe required.
+
+To get started rename the `.env.sample` to `.env` and fill the required `API_ID` and `API_KEY`
+
 # Project Structure
 
 ## app
@@ -32,7 +37,7 @@ This is a data Engineering Test Backend
 
 ## Running the project 
 ### Problem 1
-- For `Problem 1` the solution is in `db/scripts` directory. All the data required for the test re in `db/scripts/data` directory and the resulting output in `result_output` directory inside scripts. The `ProblemSolution.sql` is the solution for the `Problem 1` QUESTION. 
+- For `Problem 1` the solution is in `db/scripts` directory. All the data required for the test are in `db/scripts/data` directory and the resulting output in `result_output` directory inside scripts. The `ProblemSolution.sql` is the solution for the `Problem 1` QUESTION. 
 
 To be able to solve problem one. The following steps must be followed.
 - Startup the database environment using `make up`.
