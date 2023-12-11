@@ -14,10 +14,10 @@ This is a data Engineering Test Backend
 - Uses [Makefile](https://makefiletutorial.com/) to execute commands.
 
 # KEY Notes.
-The commands are written in a `Makefile` to make it easier to execute commands. The commands work for Unix Based systems `(Linux and Mac)` to work on  windows machine some modifications maybe required.
+The commands are written in a `Makefile` to make it easier to execute commands. The commands work for Unix Based systems `(Linux and Mac)`. To use on  windows machine some modifications maybe required.
 
 There are two Scheduling mechanisms Deployed.
-- Once without persistence UsinG `APSSchedular` library. Much simpler to setup but if somethig breaks no tasks are not recoverable.
+- One without persistence Using `APSSchedular` library. Much simpler to setup but if somethig breaks no tasks are not recoverable.
 - An improvement and one with persistence `Celery` with `Celery beat` with uses `Redis` as the broker and result backend.
 
 Currenlty `APSSchedular` approach is commented out, but if you want to use it just comment out celery section and uncomment it, then restart the server.
