@@ -18,6 +18,8 @@ The commands are written in a `Makefile` to make it easier to execute commands. 
 
 To get started rename the `.env.sample` to `.env` and fill the required `API_ID` and `API_KEY`
 
+To trigger the currency exchange manually after running the server navigate to `http://localhost:5080/v1/rates/update` and the currency api call will be triggered and the currencies populated to the database.
+
 # Project Structure
 
 ## app
@@ -51,7 +53,7 @@ The Database schema design for this problem is found on `db/migrations/202312101
 - Create a virtual environment, then install the package dependencies using command `pip install -r requirements.txt`
 - Remember to update your `API_ID` and `API_KEY` as provided by the XE account on the `.env`
 - After creating the virtual environment and installing the packages start `postgres` , `redis` and `pgadmin4` docker images using `make up` command. This will start the `postgres database` and `redis` used as the database and tasks backend for the application. (Ignore is already run in `Problem 1` above)
-- To run the `application` run the command `make server`. This will start the flask app on port `5050` which can be accessed on the browser through `http://127.0.0.1:5050`. This page will bring a UI along with two api endpoints. `v1/rates` which are used to get rates from the database and `v1/rates/update` used to manually update the current rates from the XE account.
+- To run the `application` run the command `make server`. This will start the flask app on port `5080` which can be accessed on the browser through `http://127.0.0.1:5080`. This page will bring a UI along with two api endpoints. `v1/rates` which are used to get rates from the database and `v1/rates/update` used to manually update the current rates from the XE account.
 - Once the backend is started, `Celery` and `Celery Beat Scheduler` has be started in order to spin up a daily worker that runs twice a day and updates the currency echange rates.
 - To start `Celery` run `make celery` command.
 - To start `Celery Beat Scheduler` run `make beat` command.
